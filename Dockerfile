@@ -71,6 +71,7 @@ COPY . .
 # Build SVG sprite and generate .env.registry with ENVs list and save build args into .env file
 RUN set -a && \
     source ./deploy/scripts/build_sprite.sh && \
+    chmod +x ./deploy/scripts/collect_envs.sh && \
     ./deploy/scripts/collect_envs.sh ./docs/ENVS.md && \
     set +a
 
